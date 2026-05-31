@@ -1,5 +1,4 @@
 package Packages.Panels;
-// import Packages.Windows.*;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
@@ -62,12 +61,14 @@ public class LogInPanel extends JPanel {
         add(buttonPanel,c3);
     }
 
+    
+
     private class SignUpBtnListener implements ActionListener{
         
         public void actionPerformed(ActionEvent e){
-            // LogInWindow.getObject().dispose();
+           
             
-
+           
         }
     }
 }

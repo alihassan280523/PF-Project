@@ -2,8 +2,6 @@ package Packages.Windows;
 
 import Packages.Panels.*;
 import java.awt.*;
-import java.awt.event.*;
-
 import javax.swing.*;
 
 public class StudentSignUp extends JFrame{
@@ -29,7 +27,7 @@ public class StudentSignUp extends JFrame{
         add(panel,BorderLayout.CENTER);
         // add(new JPanel(),BorderLayout.WEST);
         // add(new JPanel(),BorderLayout.EAST);
-        setVisible(true);
+        setVisible(false);
         
     }
 

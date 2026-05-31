@@ -21,6 +21,7 @@ public class LogInWindow extends JFrame{
 
         add(panel,BorderLayout.CENTER);
         setVisible(false);
+        
     }
     
 }
