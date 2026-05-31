@@ -1,15 +1,10 @@
 import Packages.Windows.*;
 
 public class Main{
+    private static final LogInWindow obj=new LogInWindow();
     public static void main(String[] args){
 
-        StudentSignUp obj=new StudentSignUp();
-        System.out.println("Hello");
-
+        obj.setVisible(true);
         
-        if(obj.getStatus()){
-            System.out.println("Hello");
-            new LogInWindow();
-        }
     }
 }

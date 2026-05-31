@@ -1,6 +1,6 @@
 package Packages.Panels;
 
-import Packages.Windows.LogInWindow;
+import Packages.Windows.*;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
@@ -14,7 +14,7 @@ public class StudentSignUpPanel extends JPanel{
     private JTextField firstNameField;
     private JTextField lastNameField;
     private JTextField emailField;
-    private JTextField passwordField;
+    private JPasswordField passwordField;
     private JButton submitButton;
     private JPanel firstNamePanel;
     private JPanel lastNamePanel;
@@ -40,7 +40,7 @@ public class StudentSignUpPanel extends JPanel{
         firstNameField=new JTextField(15);
         lastNameField=new JTextField(15);
         emailField=new JTextField(18);
-        passwordField=new JTextField(15);
+        passwordField=new JPasswordField(15);
 
         firstNamePanel=new JPanel();
         firstNamePanel.add(firstNameLabel);
@@ -81,9 +81,22 @@ public class StudentSignUpPanel extends JPanel{
 
     private class SubmitButtonEventListener implements ActionListener{
         public void actionPerformed(ActionEvent e){
-            JOptionPane.showMessageDialog(null,"Sign Up Successful");
-            new LogInWindow();
-            signUpStatus=true;
+
+            boolean allFieldsStatus=((firstNameField.getText()).isEmpty()||(lastNameField.getText()).isEmpty()||(emailField.getText()).isEmpty())||((passwordField.getPassword().length==0));
+            if(!(emailField.getText().contains("@gmail.com"))){
+                JOptionPane.showMessageDialog(emailPanel, "Invalid Email","ERROR",JOptionPane.ERROR_MESSAGE);
+            }
+            else if(allFieldsStatus){
+                JOptionPane.showMessageDialog(null,"Kindly fill all fields","ERROR",JOptionPane.ERROR_MESSAGE);
+            }else{
+
+                
+                JOptionPane.showMessageDialog(emailPanel,"Sign Up Successful","SUCCESS",1);
+                // StudentSignUp.closeWindow();
+                setVisible(false);
+            }
+
+
         }
     }
 }
