@@ -3,6 +3,7 @@ package Packages.Panels;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
+import javax.swing.border.TitledBorder;
 
 public class LogInPanel extends JPanel {
     
@@ -18,8 +19,8 @@ public class LogInPanel extends JPanel {
 
     public LogInPanel(){
         setLayout(new GridBagLayout());
-        setBorder(BorderFactory.createTitledBorder("User Log In"));
-        setBorder(BorderFactory.createBevelBorder(10));
+        
+        setBorder(BorderFactory.createCompoundBorder(BorderFactory.createMatteBorder(20, 20, 20, 20, this.getBackground()), BorderFactory.createTitledBorder((BorderFactory.createLineBorder(Color.black, 1)),"User Log in",TitledBorder.CENTER,TitledBorder.BELOW_TOP)));
         emailLabel=new JLabel("Email");
         emailField=new JTextField(15);
         passwordLabel=new JLabel("Password");
